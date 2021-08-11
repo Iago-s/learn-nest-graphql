@@ -5,6 +5,10 @@ services:
     build: .
     ports:
       - '3000:3000'
+    # O docker encontra as mudanças na nossa maquina
+    volumes:
+      - .:/home/api
+      - /home/api/node_modules
 
   database:
     container_name: nest_db
